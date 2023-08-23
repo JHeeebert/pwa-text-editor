@@ -15,7 +15,7 @@ butInstall.addEventListener('click', async () => {
     // Show the install prompt
     const promptEvent = await window.deferredPrompt.prompt();
     if (!promptEvent) {
-    // The prompt was dismissed by the user
+        // The prompt was dismissed by the user
         return;
     }
     // Show the user the prompt
