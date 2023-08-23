@@ -22,22 +22,22 @@ module.exports = () => {
       // by injecting automatically all your generated bundles.
       new HtmlWebpackPlugin({
         template: './index.html',
-        filename: 'index.html',
+        title: 'Webpack Plugin'
       }),
       // Injects bundles into the HTML file.
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'src-sw.js',
+        swDest: 'service-worker.js',
       }),
       // Webpack plugin that generates a manifest.json file
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'PWA App',
-        short_name: 'PWA App',
-        description: 'PWA App',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
+        name: 'Just Another Text Editor',
+        short_name: 'JATE',
+        description: 'A text editor for online and offline use',
+        background_color: '#7eb4e2',
+        theme_color: '#7eb4e2',
         start_url: '/',
         public_path: '/',
         icons: [
