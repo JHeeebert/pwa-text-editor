@@ -18,12 +18,56 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      // Webpack plugin that generates an HTML file for your application
+      // by injecting automatically all your generated bundles.
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        filename: 'index.html',
+      }),
+      // Injects bundles into the HTML file.
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
+      // Webpack plugin that generates a manifest.json file
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: 'PWA App',
+        short_name: 'PWA App',
+        description: 'PWA App',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
+        start_url: '/',
+        public_path: '/',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
     ],
-
     module: {
+      // CSS loader for.js files
       rules: [
-        
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /(node_modules|bower_components)/,
+          // Use babel-loader to transpile JavaScript files.
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+            },
+          },
+        }
       ],
     },
   };
