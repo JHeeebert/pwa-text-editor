@@ -1,41 +1,29 @@
 {
-  "name": "pwa-text-editor",
+  "name": "JATE",
   "version": "1.0.0",
-  "description": "Mongoose back-end project",
+  "description": "",
   "main": "server.js",
-  "license": "ISC",
   "scripts": {
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "npm run build && cd server && node server.js",
     "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
-    "install": "concurrently \"cd server && npm install\" \"cd client && npm install\"",
+    "install": "concurrently \"cd client && npm install\" \"cd server && npm install\" ",
     "client": "cd client && npm start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jheeebert/pwa-text-editor.git"
-  },
-  "keywords": [
-    "pwa",
-    "text",
-    "editor"
-  ],
-  "author": "Joshua Hebert",
-  "bugs": {
-    "url": "https://github.com/jheeebert/pwa-text-editor/issues"
-  },
-  "homepage": "https://github.com/jheeebert/pwa-text-editor#readme",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
     "if-env": "^1.0.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.9",
-    "concurrently": "^5.2.0"
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
   },
   "engines": {
-    "node": ">= 18.16.0"
+    "node": "18.16.0"
   }
 }
-

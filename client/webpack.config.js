@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const workboxPlugin = require('workbox-webpack-plugin');
 
 //  Add and configure workbox plugins for a service worker and manifest file.
 // Add CSS loaders and babel to webpack.
@@ -10,7 +11,7 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -37,8 +38,8 @@ module.exports = () => {
         description: 'A text editor for online and offline use',
         background_color: '#7eb4e2',
         theme_color: '#7eb4e2',
-        start_url: './',
-        public_path: './',
+        start_url: '/',
+        public_path: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
