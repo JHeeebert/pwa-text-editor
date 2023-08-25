@@ -47,7 +47,6 @@ THEN I should have proper build scripts for a webpack application
 - [License 📂](#license-)
 - [Badges 🛡️](#badges-️)
 - [Contributing 🔍](#contributing-)
-- [Video Walk-Through Video 🎥](#video-walk-through-video-)
 - [Questions ❓📧❔](#questions-)
 
 # Installation 💻
@@ -63,8 +62,7 @@ THEN I should have proper build scripts for a webpack application
 
 # Usage 📎
 
-1. In Insomnia Core, use API GET routes to view all categories, products, and tags formatted in JSON.
-2. Use Insomnia Core's API POST, PUT, and DELETE routes to create, update, and delete data from the database. <br>
+
    <strong>Get all users</strong> <br>
    ![All users](/assets/images) <br>
    <strong>Create user</strong> <br>
@@ -85,14 +83,10 @@ THEN I should have proper build scripts for a webpack application
    ![Add Reaction](/assets/images) <br>
    <strong>Add Friend</strong> <br>
    ![Add friend](/assets/images) <br>
-   <br>
 
 # License 📂
-
 [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-
 # Badges 🛡️
-
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [![Visual Studio](https://badgen.net/badge/icon/visualstudio?icon=visualstudio&label)](https://visualstudio.microsoft.com)
 [![JavaScript](https://badgen.net/badge/icon/javascript?icon=javascript&label)](https://www.javascript.com/)
@@ -106,7 +100,6 @@ THEN I should have proper build scripts for a webpack application
 [![Inquirer](https://img.shields.io/badge/Inquirer-8.2.4-blue)](https://github.com/SBoudrias/Inquirer.js)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![CodePen](https://img.shields.io/badge/Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white)
-
 # Contributing 🔍
 
 [Contributors Covenant](https://www.contributor-covenant.org/) <br>
@@ -120,14 +113,6 @@ THEN I should have proper build scripts for a webpack application
    [![GitHub latest commit](https://badgen.net/github/last-commit/Jheeebert/pwa-text-editor)](https://GitHub.com/Jheeebert/pwa-text-editor/commit/)
    [![GitHub forks](https://img.shields.io/github/forks/Jheeebert/pwa-text-editor.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/Jheeebert/pwa-text-editor/network/)
    <br>
-
-# Video Walk-Through Video 🎥
-
-<strong></strong> <br>
-<br>
-<strong></strong> <br>
-
-
 # Questions ❓📧❔
 
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Jheeebert/pwa-text-editor) <br>
