@@ -16,7 +16,7 @@ const initdb = async () =>
         },
     });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
+// Added logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
     console.log('Text has been added to the database');
     // Create a connection to the database version we want to use 
@@ -31,7 +31,7 @@ export const putDb = async (content) => {
     const result = await request;
     console.log('Updated text entry has been added to the database', result);
 };
-// TODO: Add logic for a method that gets all the content from the database
+// Added logic for a method that gets all the content from the database
 export const getDb = async () => {
     console.log('Text has been retrieved from the database');
     // Create a connection to the database version we want to use
