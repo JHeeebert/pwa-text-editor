@@ -37,8 +37,8 @@ module.exports = () => {
         description: 'A text editor for online and offline use',
         background_color: '#7eb4e2',
         theme_color: '#7eb4e2',
-        start_url: '/',
-        public_path: '/',
+        start_url: './',
+        public_path: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
