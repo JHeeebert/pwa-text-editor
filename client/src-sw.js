@@ -4,6 +4,7 @@ const { registerRoute } = require('workbox-routing');
 const { CacheableResponsePlugin } = require('workbox-cacheable-response');
 const { ExpirationPlugin } = require('workbox-expiration');
 const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
+const { StaleWhileRevalidate } = require('workbox-strategies');
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -28,7 +29,7 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 // Implement asset caching
 registerRoute(({ request }) =>
   // Create a callback function that will filter out any requests we want to cache
-  ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
+  ['style', 'script', 'worker'].includes(request.destination),
   new StaleWhileRevalidate({
     // Name of the cache Storage.
     cacheName: 'assets-cache',
