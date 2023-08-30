@@ -28,7 +28,7 @@ if ('serviceWorker' in navigator) {
   const workBoxSw = new Workbox('/src-sw.js');
   workBoxSw.register()
     .then(registration => {
-      console.log(`Service Worker registered! Scope: ${registration.scope}`);
+      console.log(`Service Worker registered!`);
     })
     .catch(error => {
       console.log(`Service Worker registration failed: ${error}`);
