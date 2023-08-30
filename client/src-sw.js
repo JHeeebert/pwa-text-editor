@@ -1,9 +1,9 @@
-const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
-const { CacheFirst, StaleWhileRevalidate } = require('workbox-strategies');
-const { registerRoute } = require('workbox-routing');
-const { CacheableResponsePlugin } = require('workbox-cacheable-response');
-const { ExpirationPlugin } = require('workbox-expiration');
-const { warmStrategyCache } = require('workbox-recipes/warmStrategyCache');
+import { precacheAndRoute } from 'workbox-precaching/precacheAndRoute';
+import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import { registerRoute } from 'workbox-routing';
+import { CacheableResponsePlugin } from 'workbox-cacheable-response';
+import { ExpirationPlugin } from 'workbox-expiration';
+import { warmStrategyCache } from 'workbox-recipes/warmStrategyCache';
 // Pre cache the assets using __WB_Manifest
 precacheAndRoute(self.__WB_MANIFEST);
 // Create cache first strategy for pages
@@ -25,13 +25,8 @@ warmStrategyCache({
   strategy: pageCache,
 });
 // Register the pageCache strategy for navigation requests
-registerRoute(({ request }) => request.mode === 'navigate', ({event}) => {
-  try {
-    return pageCache.handle({event});
-  } catch (error) {
-    return offlineFallback();
-  }
-});
+registerRoute(({ request }) => request.mode === 'navigate', pageCache);
+
 // Create a stale while revalidate strategy for assets { styles, scripts, workers, etc. }
 registerRoute(({ request }) => [ 'style', 'script', 'worker' ].includes(request.destination), 
 new StaleWhileRevalidate({
@@ -46,8 +41,4 @@ new StaleWhileRevalidate({
     }),
   ],
 }));
-//  Implement an offline fallback strategy
-offlineFallback = () => {
-  // Return offline fallback page
-  return caches.match('/index.html');
-};
+

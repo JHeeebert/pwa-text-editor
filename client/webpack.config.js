@@ -9,8 +9,11 @@ module.exports = () => {
   return {
     mode: 'development',
     entry: {
-      main: './src/js/index.js',
-      install: './src/js/install.js',
+      main: "./src/js/index.js",
+      install: "./src/js/install.js",
+      database: "./src/js/database.js",
+      editor: "./src/js/editor.js",
+      header: "./src/js/header.js",
     },
     output: {
       filename: '[name].bundle.js',
@@ -57,7 +60,7 @@ module.exports = () => {
         },
         {
           test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+          exclude: /node_modules/,
           // Use babel-loader to transpile JavaScript files.
           use: {
             loader: 'babel-loader',
