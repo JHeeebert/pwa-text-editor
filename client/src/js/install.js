@@ -14,7 +14,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
 buttonInstall.addEventListener('click', async () => {
     if (deferredPrompt) {
         // Show the install prompt
-        deferedPrompt.prompt();
+        deferredPrompt.prompt();
         // Wait for the user to respond to the prompt
         const { outcome } = await deferredPrompt.userChoice;
         // Log the result of the prompt

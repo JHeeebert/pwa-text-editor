@@ -44,7 +44,7 @@ export const getDb = async () => {
     const request = store.getAll();
     // Get confirmation that the content was added to the database
     const result = await request;
-    console.log('result.value', result.value);
-    return result.value;
+    console.log('result', result);
+    return result;
 };
 initdb();

@@ -1,5 +1,4 @@
 {
-  
   "name": "JATE",
   "private": true,
   "scripts": {
@@ -27,6 +26,7 @@
     "workbox-webpack-plugin": "^6.2.4"
   },
   "dependencies": {
+    "code-mirror-themes": "^1.0.0",
     "idb": "^6.1.2"
   }
 }
