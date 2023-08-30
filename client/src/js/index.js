@@ -25,7 +25,7 @@ if (typeof editor === 'undefined') {
 
 // Register the service worker
 if ('serviceWorker' in navigator) {
-  const workBoxSw = new Workbox('/service-worker.js');
+  const workBoxSw = new Workbox('/src-sw.js');
   workBoxSw.register()
     .then(registration => {
       console.log(`Service Worker registered! Scope: ${registration.scope}`);
