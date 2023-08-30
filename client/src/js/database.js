@@ -18,7 +18,6 @@ const initdb = async () =>
 
 // Added logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
-    console.log('Text has been added to the database');
     // Create a connection to the database version we want to use 
     const jateDb = await openDB('jate', 1);
     // Create a new transaction and specify the database to use and the permissions needed
@@ -28,12 +27,10 @@ export const putDb = async (content) => {
     // Use the .add() method to add the content to the database
     const request = store.put({ id: 1, value: content });
     // Get confirmation that the content was added to the database
-    const result = await request;
-    console.log('Updated text entry has been added to the database', result);
+    await request;
 };
 // Added logic for a method that gets all the content from the database
 export const getDb = async () => {
-    console.log('Text has been retrieved from the database');
     // Create a connection to the database version we want to use
     const jateDb = await openDB('jate', 1);
     // Create a new transaction and specify the database to use and the permissions needed
@@ -44,7 +41,6 @@ export const getDb = async () => {
     const request = store.getAll();
     // Get confirmation that the content was added to the database
     const result = await request;
-    console.log('result', result);
-    return result;
+    return result.value;
 };
 initdb();
