@@ -11,6 +11,7 @@
           "meta[name=theme-color]"
         ]
       }
-    ]
+    ],
+    "manifest-file-extension": "off"
   }
 }

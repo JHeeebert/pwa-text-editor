@@ -16,18 +16,27 @@ const loadSpinner = () => {
   `;
   main.appendChild(spinner);
 };
-
+// Initialize the editor
 const editor = new Editor();
 
 if (typeof editor === 'undefined') {
   loadSpinner();
 }
 
-// Check if service workers are supported
+// Register the service worker
 if ('serviceWorker' in navigator) {
-  // register workbox service worker
-  const workboxSW = new Workbox('/src-sw.js');
-  workboxSW.register();
+  const workBoxSw = new Workbox('/service-worker.js');
+  workBoxSw.register()
+    .then(registration => {
+      console.log(`Service Worker registered! Scope: ${registration.scope}`);
+    })
+    .catch(error => {
+      console.log(`Service Worker registration failed: ${error}`);
+    }
+  );
 } else {
-  console.error('Service workers are not supported in this browser.');
+  console.log('Service workers are not supported.');
 }
+
+
+

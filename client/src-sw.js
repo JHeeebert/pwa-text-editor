@@ -1,45 +1,53 @@
-const { offlineFallback, warmStrategyCache } = require('workbox-recipes');
 const { CacheFirst } = require('workbox-strategies');
 const { registerRoute } = require('workbox-routing');
 const { CacheableResponsePlugin } = require('workbox-cacheable-response');
 const { ExpirationPlugin } = require('workbox-expiration');
 const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
-
+const { StaleWhileRevalidate} = require('workbox-strategies');
+// Pre cache the assets using __WB_Manifest
 precacheAndRoute(self.__WB_MANIFEST);
-
+// Create cache first strategy for pages
 const pageCache = new CacheFirst({
   cacheName: 'page-cache',
   plugins: [
     new CacheableResponsePlugin({
       statuses: [0, 200],
     }),
+    // Cache pages for a maximum of 30 days
     new ExpirationPlugin({
       maxAgeSeconds: 30 * 24 * 60 * 60,
     }),
   ],
 });
-
+// Warm the cache with a route to the home page
 warmStrategyCache({
   urls: ['/index.html', '/'],
   strategy: pageCache,
 });
-
-registerRoute(({ request }) => request.mode === 'navigate', pageCache);
-// Implement asset caching
-registerRoute(({ request }) =>
-  // Create a callback function that will filter out any requests we want to cache
-  ['style', 'script', 'worker'].includes(request.destination),
-  new StaleWhileRevalidate({
-    // Name of the cache Storage.
-    cacheName: 'assets-cache',
-    plugins: [
-      // Plugin will cache responses for 30 days.
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-      // Plugin will delete old responses to conserve disk space.
-      new ExpirationPlugin({
-        maxAgeSeconds: 30 * 24 * 60 * 60,
-      }),
-    ],
-  }));
+// Register the pageCache strategy for navigation requests
+registerRoute(({ request }) => request.mode === 'navigate', ({event}) => {
+  try {
+    return pageCache.handle({event});
+  } catch (error) {
+    return offlineFallback();
+  }
+});
+// Create a stale while revalidate strategy for assets { styles, scripts, workers, etc. }
+registerRoute(({ request }) => [ 'style', 'script', 'worker' ].includes(request.destination), 
+new StaleWhileRevalidate({
+  cacheName: 'assets-cache',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200],
+    }),
+    // Cache assets for a maximum of 30 days
+    new ExpirationPlugin({
+      maxAgeSeconds: 30 * 24 * 60 * 60,
+    }),
+  ],
+}));
+//  Implement an offline fallback strategy
+offlineFallback = () => {
+  // Return offline fallback page
+  return caches.match('/index.html');
+};
