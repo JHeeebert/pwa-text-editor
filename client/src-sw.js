@@ -1,9 +1,9 @@
-const { CacheFirst } = require('workbox-strategies');
+const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
+const { CacheFirst, StaleWhileRevalidate } = require('workbox-strategies');
 const { registerRoute } = require('workbox-routing');
 const { CacheableResponsePlugin } = require('workbox-cacheable-response');
 const { ExpirationPlugin } = require('workbox-expiration');
-const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
-const { StaleWhileRevalidate} = require('workbox-strategies');
+const { warmStrategyCache } = require('workbox-recipes/warmStrategyCache');
 // Pre cache the assets using __WB_Manifest
 precacheAndRoute(self.__WB_MANIFEST);
 // Create cache first strategy for pages
