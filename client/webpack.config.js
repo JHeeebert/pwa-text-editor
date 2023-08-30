@@ -9,11 +9,11 @@ module.exports = () => {
   return {
     mode: 'development',
     entry: {
-      main: "./src/js/index.js",
-      install: "./src/js/install.js",
-      database: "./src/js/database.js",
-      editor: "./src/js/editor.js",
-      header: "./src/js/header.js",
+      main: './src/js/index.js',
+      install: './src/js/install.js'
+    },
+    resolve: {
+      extensions: ['.js', '.jsx'],
     },
     output: {
       filename: '[name].bundle.js',
@@ -41,7 +41,7 @@ module.exports = () => {
         background_color: '#7eb4e2',
         theme_color: '#7eb4e2',
         start_url: '/',
-        public_path: './',
+        public_path: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
@@ -57,6 +57,10 @@ module.exports = () => {
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.(png|svg|jpeg|jpg|gif)$/i,
+          type: 'asset/resource',
         },
         {
           test: /\.m?js$/,
