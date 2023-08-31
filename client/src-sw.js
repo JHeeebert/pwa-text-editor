@@ -3,7 +3,7 @@ import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
 import { registerRoute } from 'workbox-routing';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 import { ExpirationPlugin } from 'workbox-expiration';
-import { offlineFallback, warmStrategyCache } from 'workbox-recipes/warmStrategyCache';
+import { warmStrategyCache } from 'workbox-recipes';
 // Pre cache the assets using __WB_Manifest
 precacheAndRoute(self.__WB_MANIFEST);
 // Create cache first strategy for pages
