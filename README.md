@@ -64,15 +64,15 @@ THEN I should have proper build scripts for a webpack application
 
 
    <strong>Service Worker</strong> <br>
-   ![Service Worker](/Screenshots/serviceWorkerImg.png) <br>
+   ![Service Worker](/screen-shots/serviceWorkerImg.png) <br>
    <strong>IndexDB</strong> <br>
-   ![IndexDB](/ScreenShots/indexDbImg.png) <br>
+   ![IndexDB](/screen-shots/indexDbImg.png) <br>
    <strong>Manifest</strong> <br>
-   ![Manifest](/ScreenShots/) <br>
+   ![Manifest](/screen-shots/) <br>
    <strong>Time Stamps</strong> <br>
-   ![TimeStamps](/ScreenShots/timeStamps.png) <br>
+   ![TimeStamps](/screen-shots/timeStamps.png) <br>
    <strong>Page Cache</strong> <br>
-   ![PageCache](/ScreenShots/pageCacheImg.png) <br>
+   ![PageCache](/screen-shots/pageCacheImg.png) <br>
 
 # License 📂
 [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
