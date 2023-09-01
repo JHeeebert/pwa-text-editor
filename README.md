@@ -63,26 +63,16 @@ THEN I should have proper build scripts for a webpack application
 # Usage 📎
 
 
-   <strong>Get all users</strong> <br>
-   ![All users](/assets/images) <br>
-   <strong>Create user</strong> <br>
-   ![Create user](/assets/images) <br>
-   <strong>Get user by id</strong> <br>
-   ![Get user by id](/assets/images) <br>
-   <strong>Update user</strong> <br>
-   ![Update user](/assets/images) <br>
-   <strong>Create a thought</strong> <br>
-   ![Create a thought](/assets/images) <br>
-   <strong>Get all thoughts</strong> <br>
-   ![Get all thoughts](/assets/images) <br>
-   <strong>Get thought by id</strong> <br>
-   ![Get thought by id](/assets/images) <br>
-   <strong>Update thought</strong> <br>
-   ![Update thought](/assets/images) <br>
-   <strong>Add Reaction</strong> <br>
-   ![Add Reaction](/assets/images) <br>
-   <strong>Add Friend</strong> <br>
-   ![Add friend](/assets/images) <br>
+   <strong>Service Worker</strong> <br>
+   ![Service Worker](/Screenshots/serviceWorkerImg.png) <br>
+   <strong>IndexDB</strong> <br>
+   ![IndexDB](/ScreenShots/indexDbImg.png) <br>
+   <strong>Manifest</strong> <br>
+   ![Manifest](/ScreenShots/) <br>
+   <strong>Time Stamps</strong> <br>
+   ![TimeStamps](/ScreenShots/timeStamps.png) <br>
+   <strong>Page Cache</strong> <br>
+   ![PageCache](/ScreenShots/pageCacheImg.png) <br>
 
 # License 📂
 [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
@@ -97,7 +87,6 @@ THEN I should have proper build scripts for a webpack application
 [![MySQL2](https://badgen.net/badge/icon/mysql2?icon=npm&label)](https://www.npmjs.com/package/mysql2)
 [![Sequelize](https://badgen.net/badge/icon/sequelize?icon=sequelize&label)](https://sequelize.org/)
 [![dotenv](https://badgen.net/badge/icon/dotenv?icon=npm&label)](https://www.npmjs.com/package/dotenv)
-[![Inquirer](https://img.shields.io/badge/Inquirer-8.2.4-blue)](https://github.com/SBoudrias/Inquirer.js)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![CodePen](https://img.shields.io/badge/Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white)
 # Contributing 🔍
