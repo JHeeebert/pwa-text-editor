@@ -56,12 +56,12 @@ THEN I should have proper build scripts for a webpack application
 1. Clone the repo: `git clone <repository_url>`
 1. Navigate to the project directory: `cd <cloned_repo>`
 2. Install the necessary dependencies: `npm install`
-3. Seed the database with test data: `npm run seed`
-4. Start the application: `npm start`
-5. Access the application on Insomnia @ [http://localhost:3001/api/users](http://localhost:3001/api/thoughts)
+3. Start the application: `npm start`
+4. Access the application on Heroku @ https://jheeebert-pwa-text-editor-ddb6fb783130.herokuapp.com/
 
 # Usage 📎
 
+Live Heroku Link: https://jheeebert-pwa-text-editor-ddb6fb783130.herokuapp.com/
 
    <strong>Service Worker</strong> <br>
    ![Service Worker](/screen-shots/serviceWorkerImg.png) <br>
